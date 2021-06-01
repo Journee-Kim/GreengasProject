@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>텀블러 선택</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+	body {
+		width: 100vw;
+		height: 100vh;
+		margin: 0px;
+		padding: 0px;
+	}
+	#title {
+		background-color: #2A8A3B;
+		height: 6.5%;
+	}
+	#title h1 {
+		font-size: 3em;
+		margin: 0px;
+		text-align: center;
+		padding: 20px;
+		color: white;
+	}
+	#content {
+		text-align: center;
+		font-size: 2.5em;
+	}
+	#content .tumbler_item {
+		padding: 2%;
+		margin-top: 5%;
+	}
+	.tumbler_item img {
+		width: 30%;
+		height: 10%;
+		border-radius: 50%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+	}
+	.inactive {
+	}
+	.active {
+		 filter: brightness(80%);
+	}
+	#QRCodeArea img {
+		width: 100%;
+	}
+	.home {
+		float: right;
+		width: 10%;
+		height: 10%;
+	}
+	.text {
+		font-size: 1.2em;
+	}
+	.text:first-of-type {
+		margin-top: 5%;
+	}
+</style>
+</head>
+<body>
+	<div id="title">
+		<h1>텀블러 선택<img class='home' src='images/home.png'></h1>
+	</div>
+	<div id="content">
+		<div class="text">적립할 텀블러를 선택하세요!</div>
+		<div class="tumbler_item">
+			<img class="tumbler_img" th:each="t:${tumblerlist}" 
+				th:src="${t.tumblerImg}" th:onclick="showQR([[${t.tumblerQR}]]);">
+		</div>
+		<div id="QRCodeArea"></div>
+		<div class="text">직원에게 보여주세요.</div>
+	</div>
+	
+	<script>
+		function showQR(str){
+			QRCodeArea.innerHTML = `<img src="${str}">`;
+		}
+		
+		$(".tumbler_img").on("click", function(){
+			$(this).attr('class','active');
+			$(this).siblings().attr('class','inactive');
+		});
+		
+		$(".tumbler_item img:first-of-type").click();
+		
+		document.querySelector(".home").onclick = function(){
+				location.href = "main";
+		};
+	</script>
+	
+</body>
+</html>

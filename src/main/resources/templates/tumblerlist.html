@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>My Tumbler</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+	body {
+		width: 100vw;
+		height: 100vh;
+		margin: 0px;
+		padding: 0px;
+	}
+	#title {
+		background-color: #2A8A3B;
+		height: 6.5%;
+	}
+	#title h1 {
+		font-size: 3em;
+		text-align: center;
+		padding: 20px;
+		color: white;
+	}
+	#content {
+		font-size: 2.5em;
+	}
+	#content .tumbler_item {
+		padding: 5%;
+		border-bottom: 1px solid black;
+	}
+	.tumbler_info {
+		margin-top: 1%;
+		display: inline-block;
+	}
+	.tumbler_img {
+		width: 25%;
+		height: 10%;
+	}
+	.tumbler_name {
+		display: inline-block;
+		font-size: 1.2em;
+	}
+	.tumbler_cnt {
+		display: inline-block;
+	}
+	.home {
+		float: right;
+		width: 10%;
+		height: 10%;
+	}
+	.insert {
+		font-size: 1.5em;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		background-color: #73BC43;
+	}
+</style>
+</head>
+<body>
+	<div id="title">
+		<h1>나의 텀블러<img class='home' src='images/home.png'></h1>
+	</div>
+	<div id="content">
+		<div class="tumbler_item" th:each="t:${tumblerlist}">
+			<img class="tumbler_img" th:src="${t.tumblerImg}">
+			<div class="tumbler_info">
+				<h3 class="tumbler_name" th:text="${t.tumblerName}"></h3><br>
+				<div class="tumbler_cnt"><span th:text="${t.useCnt}"></span>번 사용</div>			
+			</div>
+		</div>
+		<button type="button" class="btn btn-success insert">등록하기</button>
+	</div>
+	
+	<script>
+
+		document.querySelector(".home").onclick = function() {
+			location.href = "main";
+		};
+/* 
+		document.querySelector(".insert").onclick = function() {
+			location.href = "tumblerRegister";
+		}; */
+	</script>
+</body>
+</html>
