@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+.btn.login {
+	background-color: #2A8A3B;
+	border: 0px;
+}
+form {
+	position: relative;
+	padding-top: 40%;
+	display: block;
+	width: 100%;
+}
+input, .btn.login, h3 {
+	display: block;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-right: auto;
+	margin-left: auto;
+	width: 70%;
+	border: 1px solid gray;
+	font-size: 4em;
+}
+input {
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 3%;
+}
+h3 {
+	text-align: center;
+	border: 0px;
+	font-weight: bold;
+	font-size: 5em;
+}

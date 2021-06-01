@@ -1,6 +1,8 @@
 package com.carbonjava.tumblerMileageProject.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,5 +26,8 @@ public class UserVO {
 	String userName;
 	String address;
 	int echoMileage;
+	
+	@Enumerated(EnumType.STRING)
+	UserRoleEnumType userRole;
 
 }

@@ -17,8 +17,13 @@ public class MainController {
 	
 	@RequestMapping("/main")
 	public void mainpage(Model model) {
-		model.addAttribute("usecnt", service.selectUseCntById(1L));
+		model.addAttribute("usecnt", service.selectUseCntById(1001L));
 		
 		System.out.println("check");
+	}
+	
+	@RequestMapping("/login")
+	public void login() {
+		
 	}
 }
