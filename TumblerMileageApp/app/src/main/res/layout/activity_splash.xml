@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    android:orientation="vertical"
+    //배경색
+    android:background="#ffb"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_weight="0.82"
+        android:src="@drawable/splash_img" />
+    <!--스플래시로 사용할 이미지 경로. 확장자는 쓰지 않음-->
+
+
+</LinearLayout>
