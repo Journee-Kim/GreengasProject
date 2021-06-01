@@ -94,10 +94,12 @@
 	var usecnt = document.getElementById('usecnt').value;
 	window.onload = function() {
 
-		var result = Math.ceil(usecnt / 10) * 10;
-		console.log(result);
+		//사용한 마일리지를 1단위에서 올림해준자
+		var stickers = Math.ceil(usecnt / 10) * 10;
+		
 
-		for (let i = 1; i <= result; i++) {
+		//사용자의 마일리지에 따라 스티커 판을 구성한다.
+		for (let i = 1; i <= stickers; i++) {
 			
 			if (i <= usecnt){
 				if(i%10==0){
