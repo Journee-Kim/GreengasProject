@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+#title {
+	background-color: #2A8A3B;
+	height: 6.5%;
+}
+#title h1 {
+	font-size: 3em;
+	text-align: center;
+	padding: 20px;
+	color: white;
+}
+#content {
+	font-size: 2.5em;
+}
+#content .tumbler_item {
+	padding: 5%;
+	border-bottom: 1px solid black;
+}
+.tumbler_info {
+	margin-top: 1%;
+	display: inline-block;
+}
+.tumbler_img {
+	width: 25%;
+	height: 10%;
+}
+.tumbler_name {
+	display: inline-block;
+	font-size: 1.2em;
+}
+.tumbler_cnt {
+	display: inline-block;
+}
+.home {
+	float: right;
+	width: 10%;
+	height: 10%;
+}
+.insert {
+	font-size: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	background-color: #73BC43;
+}

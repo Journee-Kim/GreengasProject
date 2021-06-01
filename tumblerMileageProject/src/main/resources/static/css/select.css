@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+}
+#title {
+	background-color: #2A8A3B;
+	height: 6.5%;
+}
+#title h1 {
+	font-size: 3em;
+	margin: 0px;
+	text-align: center;
+	padding: 20px;
+	color: white;
+}
+#content {
+	text-align: center;
+	font-size: 2.5em;
+}
+#content .tumbler_item {
+	padding: 2%;
+	margin-top: 5%;
+}
+.tumbler_item img {
+	width: 30%;
+	height: 10%;
+	border-radius: 50%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+.inactive {
+}
+.active {
+	 filter: brightness(80%);
+}
+#QRCodeArea img {
+	width: 100%;
+}
+.home {
+	float: right;
+	width: 10%;
+	height: 10%;
+}
+.text {
+	font-size: 1.2em;
+}
+.text:first-of-type {
+	margin-top: 5%;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Tumbler Mileage</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{css/main.css}">
+</head>
+<body>
+	
+	<div id="title">
+		<h1>HOME<img class='mypage' src='images/plus.png'></h1>
+	</div>
+	<div id="content">
+		<img class='main_img' src='images/main.png'>
+		<button type="button" class="btn btn-success mileage">적립하기</button>
+		
+		<img class='main_text' src='images/text.png'>
+		<div id="stickers">
+			<input type="hidden" th:value="${usecnt}" id="usecnt">
+		</div>
+	</div>
+
+	
+
+</body>
+<script type="text/javascript">
+	var usecnt = document.getElementById('usecnt').value;
+	window.onload = function() {
+
+		var result = Math.ceil(usecnt / 10) * 10;
+		console.log(result);
+
+		for (let i = 1; i <= result; i++) {
+
+			if (i <= usecnt) {
+				if (i % 10 == 0) {
+					document.getElementById('stickers').innerHTML += "<img class='tumbler' src='images/success.png'>";
+					continue;
+				}
+				document.getElementById('stickers').innerHTML += "<img class='tumbler' src='images/tumbler.png'>";
+			}
+			if (i % 10 == 0) {
+				document.getElementById('stickers').innerHTML += "<img class='tumbler' src='images/earth.png'>";
+				continue;
+			}
+
+			else if (i > usecnt)
+				document.getElementById('stickers').innerHTML += "<img class='tumbler' src='images/paper.png'>";
+		}
+
+		document.querySelector(".mypage").onclick = function() {
+			location.href = "tumblerlist";
+		};
+
+		document.querySelector(".mileage").onclick = function() {
+			location.href = "tumblerSelect";
+		};
+
+	}
+</script>
+</html>

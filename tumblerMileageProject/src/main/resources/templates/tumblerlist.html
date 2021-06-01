@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>My Tumbler</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{css/list.css}">
+</head>
+<body>
+	<div id="title">
+		<h1>나의 텀블러<img class='home' src='images/home.png'></h1>
+	</div>
+	<div id="content">
+		<div class="tumbler_item" th:each="t:${tumblerlist}">
+			<img class="tumbler_img" th:src="${t.tumblerImg}">
+			<div class="tumbler_info">
+				<h3 class="tumbler_name" th:text="${t.tumblerName}"></h3><br>
+				<div class="tumbler_cnt"><span th:text="${t.useCnt}"></span>번 사용</div>			
+			</div>
+		</div>
+		<button type="button" class="btn btn-success insert">등록하기</button>
+	</div>
+	
+	<script>
+
+		document.querySelector(".home").onclick = function() {
+			location.href = "main";
+		};
+
+	</script>
+</body>
+</html>
