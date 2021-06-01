@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+* {
+	font-family: 'Nanum Gothic', sans-serif;
+}
 body {
 	width: 100vw;
 	height: 100vh;
